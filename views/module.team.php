@@ -23,7 +23,7 @@ if (!empty($teamdatas)) {
                 </div>
                 <div class="flex-1 flex flex-col justify-start">
                     <h4 class="text-xl font-serif font-semibold text-text-main dark:text-white mb-1">' . $teamdata->name . '</h4>
-                    <p class="text-primary text-sm font-bold uppercase tracking-wider">' . $teamdata->position . '</p>
+                    <p class="text-primary text-sm font-bold uppercase tracking-wider">' . $teamdata->title . '</p>
                 </div>
             </div>';
 

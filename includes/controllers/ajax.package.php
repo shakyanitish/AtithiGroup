@@ -523,7 +523,7 @@ switch ($action) {
 
     case "addSubPackageImage":
 
-        $subpackageid  = $_REQUEST['subpackageid'];
+        $packageid  = $_REQUEST['packageid'];
 
         $imageName  = !empty($_REQUEST['imageArrayname']) ? $_REQUEST['imageArrayname'] : '';
         $title      = !empty($_REQUEST['title']) ? $_REQUEST['title'] : '';
@@ -539,8 +539,8 @@ switch ($action) {
                     $Gallery->image            = $FimageName;
                     $Gallery->title         = $Ftitle;
                     $Gallery->status        = 1;
-                    $Gallery->subpackageid        = $subpackageid;
-                    $Gallery->sortorder        = SubPackageImage::find_maximum_byparent("sortorder", $subpackageid);
+                    $Gallery->packageid        = $packageid;
+                    $Gallery->sortorder        = SubPackageImage::find_maximum_byparent("sortorder", $packageid);
                     $Gallery->registered    = registered();
                     $db->begin();
                     $res   =  $Gallery->save();
@@ -550,7 +550,7 @@ switch ($action) {
                     log_action("Sub Package Image [" . $Gallery->title . "]" . $GLOBALS['basic']['addedSuccess'], 1, 3);
                 endif;
             endforeach;
-            echo json_encode(array("action" => "success", "message" => $GLOBALS['basic']['changesSaved'], "subpackageid" => $subpackageid));
+            echo json_encode(array("action" => "success", "message" => $GLOBALS['basic']['changesSaved'], "packageid" => $packageid));
         else:
             echo json_encode(array("action" => "error", "message" => $GLOBALS['basic']['unableToSave']));
         endif;

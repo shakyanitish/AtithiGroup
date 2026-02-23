@@ -145,18 +145,18 @@ class Package extends DatabaseObject
 			$result .= '</optgroup>';
 		endif;
 		return $result;
-	}
+	}	
 
 	// view package of the nos provided.
 	static function getPackageList($total = 5, $offset = 0)
 	{
 		global $db;
-		return self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE status=1 ORDER BY sortorder ASC LIMIT {$total} OFFSET {$offset}");
+		return self::find_by_sql("SELECT * FROM " . self::$table_name . " WHERE status=1 ORDER BY sortorder DESC LIMIT {$total} OFFSET {$offset}");
 	}
 
 	//FIND THE HIGHEST MAX NUMBER.
 	static function find_maximum($field = "sortorder")
-	{
+	{					
 		global $db;
 		$result = $db->query("SELECT MAX({$field}) AS maximum FROM " . self::$table_name);
 		$return = $db->fetch_array($result);

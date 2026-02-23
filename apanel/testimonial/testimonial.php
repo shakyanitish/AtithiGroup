@@ -201,11 +201,11 @@ $metadata = $metasql->fetch_object();
                 <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
-                            Address :
+                            From :
                         </label>
                     </div>
                     <div class="form-input col-md-6">
-                        <input placeholder="Address" class="col-md-6 " type="text" name="via_type" id="via_type"
+                        <input placeholder="From" class="col-md-6 " type="text" name="via_type" id="via_type"
                                value="<?php echo !empty($testimonialInfo->via_type) ? $testimonialInfo->via_type : "";
                                ?>">
 
@@ -225,7 +225,7 @@ $metadata = $metasql->fetch_object();
                     </div>
                 </div> -->
 
-                <!-- <div class="form-row">
+                <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
                             Rating :
@@ -236,7 +236,6 @@ $metadata = $metasql->fetch_object();
                             <option value="<?php echo !empty($testimonialInfo->rating) ? $testimonialInfo->rating : "0"; ?>"
                                     selected="selected">
                                 <?php echo !empty($testimonialInfo->rating) ? $testimonialInfo->rating : "Rating"; ?></option>
-                            <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -244,9 +243,9 @@ $metadata = $metasql->fetch_object();
                             <option value="5">5</option>
                         </select>
                     </div>
-                </div> -->
+                </div>
 
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
                             Image :
@@ -286,7 +285,7 @@ $metadata = $metasql->fetch_object();
                     <div id="preview_Image"><input type="hidden" name="imageArrayname"
                                                    value="<?php echo !empty($testimonialInfo->image) ? $testimonialInfo->image : ""; ?>"
                                                    class=""/></div>
-                </div>
+                </div> -->
 
                 <div class="form-row">
                     <div class="form-label col-md-2">

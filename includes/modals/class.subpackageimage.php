@@ -2,10 +2,11 @@
 class SubPackageImage extends DatabaseObject {
 
 	protected static $table_name = "tbl_subpackage_images";
-	protected static $db_fields = array('id', 'subpackageid', 'title', 'detail', 'status', 'sortorder', 'registered', 'image');
+	protected static $db_fields = array('id', 'subpackageid', 'packageid', 'title', 'detail', 'status', 'sortorder', 'registered', 'image');
 	
 	var $id;
 	var $subpackageid;
+	var $packageid;
 	var $title;
 	var $detail;
 	var $status;
@@ -17,6 +18,13 @@ class SubPackageImage extends DatabaseObject {
 		global $db;
 		$limt  = (!empty($postnumbers) and !empty($offset))?"LIMIT ".$postnumbers." OFFSET ".$offset:'';
 		$sql = "SELECT * FROM ".self::$table_name." WHERE status=1 AND subpackageid=$subpackageid ORDER BY sortorder DESC $limt";
+		return self::find_by_sql($sql);
+	}
+
+	public static function getImagelist_by_package($packageid='',$postnumbers='', $offset=''){
+		global $db;
+		$limt  = (!empty($postnumbers) and !empty($offset))?"LIMIT ".$postnumbers." OFFSET ".$offset:'';
+		$sql = "SELECT * FROM ".self::$table_name." WHERE status=1 AND packageid=$packageid ORDER BY sortorder DESC $limt";
 		return self::find_by_sql($sql);
 	}
 
@@ -33,9 +41,18 @@ class SubPackageImage extends DatabaseObject {
 		return self::find_by_sql($sql);
 	}
 
+	// public static function getTotalImages($id=''){
+	// 	global $db;
+	// 	$cond = !empty($id)?' AND subpackageid='.$id:'';
+	// 	$query = "SELECT COUNT(id) AS tot FROM ".self::$table_name." WHERE status=1 $cond ";
+	// 	$sql = $db->query($query);
+	// 	$ret = $db->fetch_array($sql);
+	// 	return $ret['tot'];
+	// }
+
 	public static function getTotalImages($id=''){
 		global $db;
-		$cond = !empty($id)?' AND subpackageid='.$id:'';
+		$cond = !empty($id)?' AND packageid='.$id:'';
 		$query = "SELECT COUNT(id) AS tot FROM ".self::$table_name." WHERE status=1 $cond ";
 		$sql = $db->query($query);
 		$ret = $db->fetch_array($sql);

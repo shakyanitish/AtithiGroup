@@ -2,14 +2,14 @@
 
 if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) && $_GET['mode'] == "subpackageImageList"):
     $id = intval(addslashes($_GET['id']));
-    $glRec = Subpackage::find_by_id($id);
-    $pkgId = $glRec->type;
+    $glRec = Package::find_by_id($id);
+    // $pkgId = $glRec->type;
 
     ?>
     <h3>
-        List SubPackage Galleries Images ["<?php echo $glRec->title; ?>"]
+        List Package Galleries Images ["<?php echo $glRec->title; ?>"]
         <a class="loadingbar-demo btn medium bg-blue-alt float-right" href="javascript:void(0);"
-           onClick="viewSubpackagelist(<?php echo $pkgId; ?>);">
+           onClick="viewPackagelist();">
     <span class="glyph-icon icon-separator">
         <i class="glyph-icon icon-arrow-circle-left"></i>
     </span>
@@ -36,9 +36,9 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                     </button>
                 </div>
             </div>
-            <input type="hidden" name="subpackageid" value="<?php echo $glRec->id; ?>" class="validate[required]">
+            <input type="hidden" name="packageid" value="<?php echo $glRec->id; ?>" class="validate[required]">
 
-            <!-- Upload user image preview -->
+            <!-- Upload user image preview -->          
             <div id="previewUser_Image"></div>
         </div>
     </form>
@@ -94,7 +94,7 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
     <?php
     clearImages("tbl_subpackage_images", "package/galleryimages");
     clearImages("tbl_subpackage_images", "package/galleryimages/thumbnails");
-    $saveGallery = SubPackageImage::find_by_sql("SELECT * FROM tbl_subpackage_images WHERE subpackageid='{$id}' ORDER BY sortorder ASC");
+    $saveGallery = SubPackageImage::find_by_sql("SELECT * FROM tbl_subpackage_images WHERE packageid='{$id}' ORDER BY sortorder ASC");
 if ($saveGallery):
     ?>
     <div class="row">

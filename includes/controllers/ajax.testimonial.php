@@ -16,9 +16,9 @@
 			$record = new Testimonial();	
 					
 			$record->name 		= $_REQUEST['name'];
-            $record->image		= $_REQUEST['imageArrayname'];
+            // $record->image		= $_REQUEST['imageArrayname'];
 			$record->content 	= $_REQUEST['content'];			
-            // $record->rating 	= $_REQUEST['rating'];
+            $record->rating 	= $_REQUEST['rating'];
 			$record->status		= $_REQUEST['status'];
 			// $record->country	= $_REQUEST['country'];
 			$record->via_type	= $_REQUEST['via_type'];
@@ -43,9 +43,9 @@
 			$record = Testimonial::find_by_id($_REQUEST['idValue']);
 							
 			$record->name 		= $_REQUEST['name'];
-			$record->image		= $_REQUEST['imageArrayname'];
+			// $record->image		= $_REQUEST['imageArrayname'];
 			$record->content 	= $_REQUEST['content'];			
-			// $record->rating 	= $_REQUEST['rating'];
+			$record->rating 	= $_REQUEST['rating'];
 			$record->status		= $_REQUEST['status'];
 			//$record->country	= $_REQUEST['country'];
 			$record->via_type	= $_REQUEST['via_type'];
