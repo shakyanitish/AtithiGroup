@@ -4,9 +4,13 @@ $moduleTablename = "tbl_testimonial"; // Database table name
 $moduleId = 17;             // module id >>>>> tbl_modules
 $moduleFoldername = "";     // Image folder name
 
-if (isset($_GET['page']) && $_GET['page'] == "testimonial" && isset($_GET['mode']) && $_GET['mode'] == "list"):
+$typeLabels = [7 => 'Atithi Suite', 8 => 'Atithi Resort'];
+?>
+<?php if (isset($_GET['page']) && $_GET['page'] == "testimonial" && isset($_GET['mode']) && $_GET['mode'] == "list"):
     clearImages($moduleTablename, "testimonial");
     clearImages($moduleTablename, "testimonial/thumbnails");
+    // Filter by type if selected
+    $filterType = isset($_GET['type_filter']) ? (int)$_GET['type_filter'] : 0;
     ?>
     <h3>
         List Testimonial
@@ -19,6 +23,18 @@ if (isset($_GET['page']) && $_GET['page'] == "testimonial" && isset($_GET['mode'
         </a>
     </h3>
     <div class="my-msg"></div>
+
+    <!-- Property Type Filter -->
+    <!-- <div class="form-row" style="margin-bottom:15px;">
+        <div class="form-label col-md-2"><label>Filter by Property:</label></div>
+        <div class="form-input col-md-4">
+            <select id="propertyTypeFilter" class="custom-select" onchange="filterTestimonialsByType(this.value)">
+                <option value="0">All Properties</option>
+                <option value="7" <?php echo ($filterType == 7) ? 'selected' : ''; ?>>Atithi Suite</option>
+                <option value="8" <?php echo ($filterType == 8) ? 'selected' : ''; ?>>Atithi Resort</option>
+            </select>
+        </div>
+    </div> -->
     <div class="example-box">
         <div class="example-code">
             <table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
@@ -27,15 +43,17 @@ if (isset($_GET['page']) && $_GET['page'] == "testimonial" && isset($_GET['mode'
                     <th style="display:none;"></th>
                     <th class="text-center"><input class="check-all" type="checkbox"/></th>
                     <th class="text-center">Name</th>
-                    <!-- <th class="text-center">Via Type</th> -->
+                    <th class="text-center">Property</th>
                     <th class="text-center"><?php echo $GLOBALS['basic']['action']; ?></th>
                 </tr>
                 </thead>
 
                 <tbody>
-                <?php $records = Testimonial::find_by_sql("SELECT * FROM " . $moduleTablename . " ORDER BY sortorder DESC ");
+                <?php
+                $typeSql = ($filterType > 0) ? " AND type='$filterType'" : '';
+                $records = Testimonial::find_by_sql("SELECT * FROM " . $moduleTablename . " WHERE 1=1 $typeSql ORDER BY sortorder DESC ");
                 foreach ($records as $key => $record): ?>
-                    <tr id="<?php echo $record->id; ?>">
+                    <tr id="<?php echo $record->id; ?>" data-type="<?php echo $record->type; ?>">
                         <td style="display:none;"><?php echo $key + 1; ?></td>
                         <td><input type="checkbox" class="bulkCheckbox" bulkId="<?php echo $record->id; ?>"/></td>
                         <td>
@@ -45,7 +63,14 @@ if (isset($_GET['page']) && $_GET['page'] == "testimonial" && isset($_GET['mode'
                                    title="<?php echo $record->name; ?>"><?php echo $record->name; ?></a>
                             </div>
                         </td>
-                        <!-- <td><?php echo $record->via_type; ?></td> -->
+                        <td class="text-center">
+                            <?php
+                            $typeLabels = [7 => 'Atithi Suite', 8 => 'Atithi Resort'];
+                            $typeBadge = isset($typeLabels[$record->type]) ? $typeLabels[$record->type] : 'N/A';
+                            $badgeColor = ($record->type == 7) ? 'bg-blue' : (($record->type == 8) ? 'bg-orange' : 'bg-dark');
+                            ?>
+                            <span class="badge <?php echo $badgeColor; ?>" style="padding:3px 8px;border-radius:3px;color:#fff;font-size:11px;"><?php echo $typeBadge; ?></span>
+                        </td>
                         <td class="text-center">
                             <?php
                             $statusImage = ($record->status == 1) ? "bg-green" : "bg-red";
@@ -224,6 +249,18 @@ $metadata = $metasql->fetch_object();
                                ?>">
                     </div>
                 </div> -->
+
+                <div class="form-row">
+                    <div class="form-label col-md-2">
+                        <label for="">Property :</label>
+                    </div>
+                    <div class="form-input col-md-6">
+                        <select class="col-md-6 validate[required]" name="type" id="type">
+                            <option value="7" <?php echo (!empty($testimonialInfo->type) && $testimonialInfo->type == 7) ? 'selected' : ''; ?>>Atithi Suite</option>
+                            <option value="8" <?php echo (!empty($testimonialInfo->type) && $testimonialInfo->type == 8) ? 'selected' : ''; ?>>Atithi Resort</option>
+                        </select>
+                    </div>
+                </div>
 
                 <div class="form-row">
                     <div class="form-label col-md-2">

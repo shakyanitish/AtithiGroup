@@ -7,6 +7,16 @@ function getTableId(){
 	return 'table_dnd';
 }
 
+/***************************************** Filter Testimonials by Property Type *******************************************/
+function filterTestimonialsByType(typeVal) {
+    var baseUrl = '<?php echo ADMIN_URL; ?>testimonial/list';
+    if (typeVal == 0) {
+        window.location.href = baseUrl;
+    } else {
+        window.location.href = baseUrl + '?type_filter=' + typeVal;
+    }
+}
+
 $(document).ready(function () {
     // Function to get paging information
     $.fn.dataTableExt.oApi.fnPagingInfo = function (oSettings) {
@@ -31,8 +41,8 @@ $(document).ready(function () {
     console.log("Desired Page:", desiredPage);
     console.log("Desired Length:", desiredLength);
 
-    // Initialize the DataTable
-    var oTable = $('#example').dataTable({
+    // Initialize the DataTable — declared globally so recordDelete can access it
+    window.oTable = $('#example').dataTable({
         "bJQueryUI": true,
         "sPaginationType": "full_numbers",
         "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
@@ -228,13 +238,14 @@ function editRecord(Re)
 		
 // Deleting Record
 function recordDelete(Re){
-	$('.MsgTitle').html('<?php echo sprintf($GLOBALS['basic']['deleteRecord_'],"testimonial")?>');															
+	$('.MsgTitle').html('<?php echo sprintf($GLOBALS['basic']['deleteRecord_'],"testimonial")?>');								
 	$('.pText').html('Click on yes button to delete this testimonial permanently.!!');
 	$('.divMessageBox').fadeIn();
 	$('.MessageBoxContainer').fadeIn(1000);
 	
-	$(".botTempo").on("click",function(){						
-		var popAct=$(this).attr("id");						
+	// .off() first to clear any previously stacked handlers
+	$(".botTempo").off("click").on("click", function(){				
+		var popAct=$(this).attr("id");				
 		if(popAct=='yes'){
 			$.ajax({
 			   type: "POST",
@@ -242,10 +253,26 @@ function recordDelete(Re){
 			   url:  getLocation(),
 			   data: 'action=delete&id='+Re,
 			   success: function(data){
-				 var msg = eval(data);  
-				 showMessage(msg.action,msg.message);
-				 $('#'+Re).remove();
-				 reStructureList(getTableId());
+				 // Show message FIRST before any DOM changes
+				 showMessage(data.action, data.message);
+				 // Then fade the row out, and only AFTER fade completes, remove via DataTables
+				 var $row = $('#'+Re);
+				 if ($row.length) {
+				     $row.fadeOut(400, function(){
+				         if (window.oTable) {
+				             try {
+				                 window.oTable.fnDeleteRow($row[0]);
+				                 window.oTable.fnDraw(false);
+				             } catch(e) {
+				                 $row.remove();
+				                 reStructureList(getTableId());
+				             }
+				         } else {
+				             $row.remove();
+				             reStructureList(getTableId());
+				         }
+				     });
+				 }
 			   }
 			});
 		}else{ Re=null;}

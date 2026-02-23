@@ -120,25 +120,33 @@ if (!empty($programsRec)) {
             }
         }
 
+        // Map slug to property type ID (Suite=7, Resort=8)
+        $slugTypeMap = [
+            'atithi-suite'   => 7,
+            'atithi-resort'  => 8,
+        ];
+        $propertyTypeId = isset($slugTypeMap[$program->slug]) ? $slugTypeMap[$program->slug] : 0;
+
         // Get testimonials for this property
         $testimonialHtml = '';
-        $testimonials = Testimonial::get_alltest_by($program->id, 3); // Assuming type stores package ID for relevancy, adjust if needed
-        if (empty($testimonials)) {
-            // Fallback to random if none specific
-            $testimonials = Testimonial::get_alltestimonial(2);
-        }
+        // Get testimonials for this property only (no cross-property fallback)
+        $testimonials = ($propertyTypeId > 0) ? Testimonial::get_alltest_by($propertyTypeId, 3) : [];
 
         if (!empty($testimonials)) {
             foreach ($testimonials as $t) {
+                // Build dynamic star rating HTML
+                $tRating = !empty($t->rating) ? max(1, min(5, (int)$t->rating)) : 5;
+                $starsHtml = '';
+                for ($s = 1; $s <= 5; $s++) {
+                    $starClass = ($s <= $tRating) ? 'fill-1' : 'opacity-30';
+                    $starsHtml .= '<span class="material-symbols-outlined ' . $starClass . '">star</span>';
+                }
+
                 $testimonialHtml .= '
                 <div class="flex flex-col justify-between h-full">
                     <div>
                         <div class="flex gap-1 text-primary mb-4">
-                            <span class="material-symbols-outlined fill-1">star</span>
-                            <span class="material-symbols-outlined fill-1">star</span>
-                            <span class="material-symbols-outlined fill-1">star</span>
-                            <span class="material-symbols-outlined fill-1">star</span>
-                            <span class="material-symbols-outlined fill-1">star</span>
+                            ' . $starsHtml . '
                         </div>
                         <h4 class="text-xl font-serif mb-2 italic">' . $t->via_type . '</h4>
                         <p class="text-white/70 text-sm font-light leading-relaxed mb-4">' . strip_tags($t->content) . '</p>

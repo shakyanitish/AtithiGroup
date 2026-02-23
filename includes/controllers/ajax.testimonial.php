@@ -22,6 +22,7 @@
 			$record->status		= $_REQUEST['status'];
 			// $record->country	= $_REQUEST['country'];
 			$record->via_type	= $_REQUEST['via_type'];
+			$record->type		= $_REQUEST['type'];
 			// $record->linksrc	= $_REQUEST['linksrc'];
 			$record->sortorder	= Testimonial::find_maximum();
 			$db->begin();
@@ -49,6 +50,7 @@
 			$record->status		= $_REQUEST['status'];
 			//$record->country	= $_REQUEST['country'];
 			$record->via_type	= $_REQUEST['via_type'];
+			$record->type		= $_REQUEST['type'];
             // $record->linksrc	= $_REQUEST['linksrc'];
 
 			$db->begin();
@@ -68,9 +70,9 @@
 			if($res)$db->commit();else $db->rollback();
 			reOrder("tbl_testimonial", "sortorder");
 			
-			$message  = sprintf($GLOBALS['basic']['deletedSuccess_'], "Testimonial '".$record->title."'");
+			$message  = sprintf($GLOBALS['basic']['deletedSuccess_'], "Testimonial '".$record->name."'");
 			echo json_encode(array("action"=>"success","message"=>$message));					
-			log_action("Testimonial  [".$record->title."]".$GLOBALS['basic']['deletedSuccess'],1,6);
+			log_action("Testimonial  [".$record->name."]".$GLOBALS['basic']['deletedSuccess'],1,6);
 		break;
 		
 		// Module Setting Sections  >> <<
@@ -101,7 +103,7 @@
 			$db->begin();
 			for($i=1; $i<count($allid); $i++){
 				$record = Testimonial::find_by_id($allid[$i]);
-				log_action("Testimonial  [".$record->title."]".$GLOBALS['basic']['deletedSuccess'],1,6);				
+				log_action("Testimonial  [".$record->name."]".$GLOBALS['basic']['deletedSuccess'],1,6);				
 				$res = $db->query("DELETE FROM tbl_testimonial WHERE id='".$allid[$i]."'");				
 				$return = 1;
 			}
