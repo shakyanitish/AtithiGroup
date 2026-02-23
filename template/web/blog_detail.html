@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <jcms:site:seotitle/>
+
+    <!-- Fevicon -->
+    <jcms:site:fevicon/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- jQuery -->
+    <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+    <!-- Tailwind CSS -->
+    <script src='https://cdn.tailwindcss.com?plugins=forms,container-queries'></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c0a062",
+                        "background-light": "#fcfbf8",
+                        "background-dark": "#1b180d",
+                        "surface-light": "#f3f0e7",
+                        "surface-dark": "#2c2819",
+                        "text-main": "#1b180d",
+                        "text-muted": "#5c5542",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light text-text-main dark:bg-background-dark dark:text-white font-display antialiased">
+    <!-- Floating Pill Navbar (loaded from partial) -->
+    <!-- Sticky Transparent Navbar -->
+    <nav id="main-nav" class="lg:absolute top-0 left-0 right-0 z-50 w-full transition-all duration-300">
+        <!-- Background Overlay - Hidden by default, shown on scroll -->
+        <div id="nav-bg"
+            class="absolute color-overlay border-surface-light dark:bg-background-dark/90 duration-300 inset-0 opacity-0 transition-opacity">
+        </div>
+        <div class="relative layout-container flex justify-center w-full mb-5  xl:mb-0">
+            <div class=" flex items-center justify-center mt-4  px-6">
+                <!-- Logo -->
+                <div class="flex flex-col items-center text-text-main dark:text-white z-10">
+                    <div class=" size-20 md:size-40 text-primary">
+                        <jcms:site:logo/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header
+        class="relative h-[65vh] min-h-[500px] flex items-end justify-center overflow-hidden opacity-0 transition-opacity duration-500 pb-16 md:pb-24"
+        id="blog-header">
+        <div class="absolute inset-0 z-0">
+            <img id="blog-hero-img" src='<jcms:module:blog-image/>' alt="Hero Image" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center px-6">
+            <span id="blog-category"
+                class="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4 block"><jcms:module:blog-subtitle/></span>
+            <h1 id="blog-title" class="text-white text-4xl md:text-6xl font-serif font-semibold leading-tight mb-6">
+                <jcms:module:blog-title/>
+            </h1>
+            <div class="flex items-center justify-center gap-6 text-white/80 text-sm font-medium">
+                <span class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span>
+                    <span id="blog-date"><jcms:module:blog-date/></span>
+                </span>
+                <span class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">schedule</span>
+                    <span id="blog-read-time"><jcms:module:blog-read-time/></span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <main class="py-20 px-6 opacity-0 transition-opacity duration-500" id="blog-main">
+        <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <!-- Main Column -->
+            <article class="lg:col-span-8">
+
+                <div class="prose prose-lg dark:prose-invert max-w-none space-y-8 text-lg font-light leading-relaxed">
+                    <p class="italic text-xl border-l-4 border-primary pl-6 py-2"><jcms:module:blog-brief/></p>
+                    <jcms:module:blog-content/>
+                </div>
+
+                <!-- Footer of Article -->
+                <div
+                    class="mt-16 pt-10 border-t border-black/10 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="flex items-center gap-4">
+                        <img id="blog-author-img" src='<jcms:module:blog-image/>' alt="Author"
+                            class="size-12 rounded-full">
+                        <div>
+                            <span class="block text-sm font-bold uppercase tracking-widest text-primary">Written
+                                By</span>
+                            <span id="blog-author-name"
+                                class="block text-lg font-serif font-semibold"><jcms:module:blog-author/></span>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <jcms:module:socilaLinkbtm/>
+
+                    </div>
+                </div>
+            </article>
+
+            <!-- Sidebar -->
+            <aside class="lg:col-span-4 space-y-12 lg:sticky lg:top-24 self-start">
+                <!-- Recent Posts -->
+                <jcms:module:blog-recent-posts/>
+                <!-- Newsletter -->
+                <div class="bg-primary text-white p-10 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Stay Inspired</h3>
+                    <p class="text-white/80 font-light mb-8 italic">Join our community for exclusive travel tips and member-only stories.</p>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Email Address" class="w-full bg-white/10 border border-white/20 rounded-full py-3 px-6 text-white placeholder:text-white/60 focus:bg-white/20 focus:outline-none">
+                        <button class="w-full bg-white text-primary font-bold uppercase tracking-widest text-xs py-4 rounded-full hover:bg-background-dark hover:text-white transition-all">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer (Simplified) -->
+    <!-- <footer class="py-10 border-t border-black/5 dark:border-white/5 text-center text-sm text-text-muted">
+        <p>© 2026 Atithi Group. All Rights Reserved.</p>
+    </footer> -->
+    <jcms:module:footer/>
+
+    <!-- Font Awesome -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js'></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navBg = document.getElementById('nav-bg');
+
+            // Scroll Effect
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    if (navBg) navBg.classList.replace('opacity-0', 'opacity-100');
+                } else {
+                    if (navBg) navBg.classList.replace('opacity-100', 'opacity-0');
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+
+
+
+            // Reveal Content
+            document.getElementById('blog-header').classList.remove('opacity-0');
+            document.getElementById('blog-main').classList.remove('opacity-0');
+        });
+    </script>
+</body>
+
+</html>

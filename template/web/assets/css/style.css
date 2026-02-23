@@ -1,0 +1,71 @@
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.header-scrolled {
+    background-color: rgba(252, 251, 248, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.board-member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.board-member-image:hover {
+    transform: scale(1.1);
+}
+
+/* Owl Carousel Custom Styles */
+.owl-theme .owl-nav {
+    margin-top: 30px !important;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.owl-theme .owl-nav [class*='owl-'] {
+    background: #c0a062 !important;
+    color: white !important;
+    font-size: 14px !important;
+    border-radius: 50% !important;
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin: 0 !important;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background: #1b180d !important;
+    transform: translateY(-3px);
+}
+
+.owl-theme .owl-dots {
+    margin-top: 20px !important;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    background: #e2e2e2 !important;
+    width: 10px;
+    height: 10px;
+    transition: all 0.3s ease;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+    background: #c0a062 !important;
+    width: 25px;
+}
+
+/* Specific styling for blog slider to ensure dots/nav are visible */
+.blog-slider .owl-nav {
+    position: relative;
+    z-index: 10;
+}
+

@@ -1,0 +1,317 @@
+[
+  {
+    "id": 1,
+    "slug": "family-friendly-resort-stay-in-pokhara",
+    "category": "Family & Travel",
+    "date": "Feb 12, 2026",
+    "readTime": "5 Min Read",
+    "title": "Family-Friendly Resort Stay in Pokhara",
+    "excerpt": "Organizing a family trip that blends comfort, adventure, and relaxation?",
+    "image": "./assets/image/Family-Friendly-Resort.jpeg",
+    "author": "Atithi Group",
+    "authorImage": "./assets/image/favicon.png",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Organizing a family trip that blends comfort, adventure, and relaxation? For visitors of all ages, our family-friendly resort  provides the ideal fusion of natural beauty and friendly service.",
+        "style": "italic text-xl border-l-4 border-primary pl-6 py-2"
+      },
+      {
+        "type": "heading",
+        "text": "1. A Safe and Comfortable Environment for Families"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our resort has been thoughtfully designed to provide spacious rooms, connecting suites, and modern amenities that make family getaways simple and stress-free. The facility's secure grounds, committed staff, and family-friendly amenities allow parents to relax while children enjoy a welcoming and safe atmosphere."
+      },
+      {
+        "type": "heading",
+        "text": "2. Close to Nature and Attractions"
+      },
+      {
+        "type": "paragraph",
+        "text": "One of the key advantages of staying at our  resort is the proximity to major attractions. Sarangkot provides families with peaceful boating on Phewa Lake, the World Peace Pagoda, and breathtaking sunrise vistas. These experiences create memories that last a lifetime for both adults and children."
+      },
+      {
+        "type": "heading",
+        "text": "3. Activities for Every Age Group"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our resort offers to a range of interests and is family-friendly:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Outdoor garden spaces for children to play",
+          "Adventure support for paragliding, boating, and light trekking",
+          "Swimming pools and recreational areas",
+          "Multi-cuisine dining suitable for all tastes",
+          "Cultural experiences and sightseeing tours"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "There is something for everyone, whether your family wants to explore Pokhara's natural beauty or relax by the pool."
+      },
+      {
+        "type": "heading",
+        "text": "4. Dining Made Easy"
+      },
+      {
+        "type": "paragraph",
+        "text": "Without delicious meals, family trips aren't complete. Our resort offers a variety of eating alternatives, including both international and regional Nepali cuisine. Families find dining convenient because of kid-friendly menus and adjustable meal times."
+      },
+      {
+        "type": "heading",
+        "text": "5. Creating Lasting Family Memories"
+      },
+      {
+        "type": "paragraph",
+        "text": "A family vacation at our resort is an experience full of coziness, adventure, and camaraderie—it's more than just lodging. Pokhara is still one of the greatest places in Nepal for an unforgettable family vacation because of its breathtaking mountain vistas, serene environment, and kind locals."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "our-coverage",
+    "category": "Hospitality",
+    "date": "Feb 10, 2026",
+    "readTime": "8 Min Read",
+    "title": "Our Coverage",
+    "excerpt": "How we blend ancient traditions with modern luxury to create unforgettable experiences...",
+    "image": "./assets/image/banner-1.jpeg",
+    "author": "Atithi Group",
+    "authorImage": "./assets/image/favicon.png",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Being covered at our Resort and Suites does not only mean that the location is good, it means that we have the determination to deliver excellent comfort, hospitality, and customized services at every resort. We are very keen to select places that give our customers not only a charming view but a convenient place and memorable time to be spent."
+      },
+      {
+        "type": "heading",
+        "text": "Prime Destination Coverage"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our suites and resort is situated at the very center of Pokhara, which ensures our customers the most optimal balance of comfort and luxury and the breathtaking natural views. Our resort is situated near the most popular places in Pokhara and it is a quiet and luxurious paradise."
+      },
+      {
+        "type": "paragraph",
+        "text": "We take care to choose sites that offer accessibility and peace of mind so that visitors may unwind in quiet while yet being close to the main attractions."
+      },
+      {
+        "type": "heading",
+        "text": "Comprehensive Hospitality Services"
+      },
+      {
+        "type": "paragraph",
+        "text": "A wide range of luxurious and comfort oriented services are covered by us:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Spacious and elegantly designed suites",
+          "Private balconies with scenic views",
+          "Fine dining and multi-cuisine restaurants",
+          "Rooftop or poolside experiences",
+          "Spa and wellness facilities",
+          "Conference halls and event spaces",
+          "24/7 guest assistance and concierge services"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Our resort maintains high standards for cleanliness, safety, and excellent service."
+      },
+      {
+        "type": "heading",
+        "text": "Serving Every Guest Segment"
+      },
+      {
+        "type": "paragraph",
+        "text": "Our resort coverage is intended to meet the needs of:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Honeymoon and romantic getaways",
+          "Family vacations",
+          "Corporate retreats and meetings",
+          "Destination weddings and celebrations",
+          "International and domestic tourists"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "We make certain that each visitor experiences a smooth fusion of comfort, elegance, and individualized attention in our resort"
+      },
+      {
+        "type": "heading",
+        "text": "Growing with Excellence"
+      },
+      {
+        "type": "paragraph",
+        "text": "We continue to prioritize quality over number as we grow our network of resorts. Each new site is created with careful planning, first-rate amenities, and a commitment to provide guests with experiences they won't soon forget."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "top-things-to-do",
+    "category": "Activities",
+    "date": "Feb 05, 2026",
+    "readTime": "6 Min Read",
+    "title": "Top Things to Do Near Our Resort",
+    "excerpt": "Discover the best attractions and activities near our resort in Pokhara, from serene lakes to mountain sunrises.",
+    "image": "./assets/image/Top-Things-to-Do.jpeg",
+    "author": "Atithi Group",
+    "authorImage": "./assets/image/favicon.png",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "One of the most beautiful and adventurous places in Nepal is Pokhara, often known as the \"City of Lakes.\" In addition to offering comfort and luxury, staying at our resort puts you in close proximity to some of the most well-liked sights and activities in the city. There is something for everyone close to our resort, whether you're looking for adventure, leisure, or cultural events."
+      },
+      {
+        "type": "heading",
+        "text": "1. Explore the Serenity of Phewa Lake"
+      },
+      {
+        "type": "paragraph",
+        "text": "Phewa Lake, which is close to our resort, provides tranquil boating, kayaking, and lakeside walks. The Annapurna mountains' breathtaking reflections on the river are ideal for relaxation and photography, and both families and couples can enjoy them."
+      },
+      {
+        "type": "heading",
+        "text": "2. Witness Sunrise at Sarangkot"
+      },
+      {
+        "type": "paragraph",
+        "text": "Sarangkot offers stunning panoramic vistas. Offering a breathtaking perspective of the city below and the Himalayan ranges, it is a well-liked location for paragliding enthusiasts and dawn watchers. Tandem paragliding is another activity that adventurers would adore here."
+      },
+      {
+        "type": "heading",
+        "text": "3. Discover Natural Wonders: Davis Falls and Gupteshwor Cave"
+      },
+      {
+        "type": "paragraph",
+        "text": "Visitors interested in nature can visit Davis Falls, a striking flow surrounded by rich greenery. Families and adventurers will love the interesting underground experience that Gupteshwor Cave, which is close by, has to offer."
+      },
+      {
+        "type": "heading",
+        "text": "4. Visit World Peace Pagoda"
+      },
+      {
+        "type": "paragraph",
+        "text": "The World Peace Pagoda, which is perched on a mountaintop with expansive views of the lake and mountains, is a calm place to meditate, take pictures, and take in the scenery. For tourists of all ages, a quick hike to this famous site is a revitalizing experience."
+      },
+      {
+        "type": "heading",
+        "text": "5. Adventure and Outdoor Activities"
+      },
+      {
+        "type": "paragraph",
+        "text": "Nepal's adventure capital is Pokhara. You can reach the following from our resort:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Paragliding over the city and lakes",
+          "Trekking to nearby hills and trails",
+          "Boating, zip-lining, and cycling adventures"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Pokhara is ideal for adventure seekers and families that want to create lasting memories because of these activities."
+      },
+      {
+        "type": "heading",
+        "text": "6. Shopping and Local Culture"
+      },
+      {
+        "type": "paragraph",
+        "text": "Discover Pokhara's easily accessible local markets, dining options, and cultural landmarks. Experience the colorful culture of the city by sampling real Nepali food, shopping for handicrafts, or taking in traditional performances."
+      },
+      {
+        "type": "heading",
+        "text": "Make the Most of Your Stay"
+      },
+      {
+        "type": "paragraph",
+        "text": "You may take in Pokhara's splendor while staying at our resort, which offers a cozy, luxurious base. Relax in our contemporary suites, savor a picturesque meal, or rejuvenate at our wellness centers after a day of exploration or adventure."
+      },
+      {
+        "type": "paragraph",
+        "text": "Our resort is the best place to start exploring Pokhara's unique combination of adventure, nature, and culture."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "hospitality-in-pokhara",
+    "category": "Destination",
+    "date": "Jan 28, 2026",
+    "readTime": "4 Min Read",
+    "title": "Hospitality in Pokhara: Where Nature Meets Warmth",
+    "excerpt": "Experience the perfect blend of natural beauty and authentic Nepali hospitality in the heart of Pokhara.",
+    "image": "./assets/image/Hospitality-in-Pokhara.jpeg",
+    "author": "Atithi Group",
+    "authorImage": "./assets/image/favicon.png",
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Located in the center of Pokhara, hospitality is a deeply felt custom rather than just a service. Pokhara, which is surrounded by tranquil lakes and the magnificent Annapurna range, provides tourists with the ideal fusion of natural beauty, cultural diversity, and a friendly Nepali greeting."
+      },
+      {
+        "type": "heading",
+        "text": "A Destination Defined by Scenic Beauty"
+      },
+      {
+        "type": "paragraph",
+        "text": "Some of Nepal's most recognizable sights can be found in Pokhara. Experience peacefulness at the World Peace Pagoda, visit the natural wonder of Davis Falls, take in the stunning sunrise views from Sarangkot, or go boating peacefully on Phewa Lake. The city's hospitality offerings are intended to enhance these life-changing events."
+      },
+      {
+        "type": "heading",
+        "text": "A Perfect Blend of Comfort and Culture"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pokhara's hotels and resorts blend contemporary conveniences with traditional Nepali charm. From opulent lakefront resorts to small boutique hotels, visitors can anticipate:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Comfortable and well-furnished rooms",
+          "Scenic rooftop or lakeside dining",
+          "Friendly and personalized guest services",
+          "Easy access to tourist attractions",
+          "Adventure travel support (paragliding, trekking, boating)"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Whether they are business groups, families, adventure seekers, or honeymoon couples, the local hospitality sector is aware of the various needs of tourists."
+      },
+      {
+        "type": "heading",
+        "text": "Adventure and Relaxation in One Place"
+      },
+      {
+        "type": "paragraph",
+        "text": "Pokhara is frequently referred to as the adventure capital of Nepal. Activities like paragliding, zip-lining, trekking, and ultra-light flying are enjoyed by tourists in addition to sightseeing. The city's hospitality industry makes sure visitors are able to relax in safety and comfort after an exciting day of exploring."
+      },
+      {
+        "type": "heading",
+        "text": "A Warm Nepali Welcome"
+      },
+      {
+        "type": "paragraph",
+        "text": "The kindness of the locals is what really distinguishes Pokhara's hospitality. Guests are regarded as valued friends in addition to being guests. Pokhara is one of Nepal's most beloved travel destinations because of its unique combination of natural beauty, authentic culture, and first-rate service."
+      },
+      {
+        "type": "paragraph",
+        "text": "Whether you're looking for adventure, tranquility, or a romantic retreat, Pokhara's warmth ensures a relaxing, unforgettable, and genuinely inspirational visit."
+      }
+    ]
+  }
+]
