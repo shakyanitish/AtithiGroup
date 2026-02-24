@@ -95,7 +95,7 @@ $linkTarget = '';
 $homebloglist = '';
 $homeblogs = '';
 if (defined('HOME_PAGE')) {
-    $homeblog= Blog::get_latestblog_by(3);
+    $homeblog= Blog::get_latestblog_by(100);
     // $homeblogs = Blog:: get_latestblog_by(3);
     if (!empty($homeblog)) {
 
