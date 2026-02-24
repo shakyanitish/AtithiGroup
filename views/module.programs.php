@@ -130,7 +130,7 @@ if (!empty($programsRec)) {
         // Get testimonials for this property
         $testimonialHtml = '';
         // Get testimonials for this property only (no cross-property fallback)
-        $testimonials = ($propertyTypeId > 0) ? Testimonial::get_alltest_by($propertyTypeId, 3) : [];
+        $testimonials = ($propertyTypeId > 0) ? Testimonial::get_alltest_by($propertyTypeId, 6) : [];
 
         if (!empty($testimonials)) {
             foreach ($testimonials as $t) {
