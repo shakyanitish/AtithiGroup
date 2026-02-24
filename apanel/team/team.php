@@ -279,7 +279,7 @@ if (isset($_GET['page']) && $_GET['page'] == "team" && isset($_GET['mode']) && $
                     <div id="preview_Image"></div>
                 </div>
 
-                <div class="form-row">
+                <!-- <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
                             Content:
@@ -294,7 +294,7 @@ if (isset($_GET['page']) && $_GET['page'] == "team" && isset($_GET['mode']) && $
                             <span class="button-content">Read More</span>
                         </a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- <div class="form-row">
                     <div class="form-label col-md-12">

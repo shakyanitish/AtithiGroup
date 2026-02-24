@@ -19,23 +19,23 @@ if (defined('BLOG_DETAIL_PAGE')) {
                         <div class="blog-single-wrapper">
                             <div class="blog-single-content">
                                 <div class="blog-thumb-img">
-                                    <img src="'.$image.'" alt="'.$blog->title.'">
+                                    <img src="' . $image . '" alt="' . $blog->title . '">
                                 </div>
                                 <div class="blog-info">
                                     <div class="blog-details">
                                         <h3 class="blog-details-title mb-20">It is a long established fact that a reader</h3>
-                                         '.$blog->content.'
+                                         ' . $blog->content . '
 
                                         <div class="row">
                                             <div class="col-md-6 mb-20">
-                                                <img src="'.$image.'" alt="'.$blog->title.'">
+                                                <img src="' . $image . '" alt="' . $blog->title . '">
                                             </div>
                                             <div class="col-md-6 mb-20">
-                                                <img src="'.$image.'" alt="'.$blog->title.'">
+                                                <img src="' . $image . '" alt="' . $blog->title . '">
                                             </div>
                                         </div>
                                         <p class="mb-20">
-										'.$blog->content.'
+										' . $blog->content . '
 										</p>
                                     </div>
                                 </div>
@@ -143,17 +143,17 @@ if (defined('BLOG_DETAIL_PAGE')) {
 
 
             <div class="blog-single-title">
-                <h2>'.$blog->title.'</h2>
-                <p><strong>Author:</strong> '.$blog->author.'</p>
-                <p><strong>Date:</strong> '.date("d M Y", strtotime($blog->blog_date)).'</p>
+                <h2>' . $blog->title . '</h2>
+                <p><strong>Author:</strong> ' . $blog->author . '</p>
+                <p><strong>Date:</strong> ' . date("d M Y", strtotime($blog->blog_date)) . '</p>
             </div>
 
             <div class="blog-single-image">
-                <img src="'.$image.'" alt="'.$blog->title.'">
+                <img src="' . $image . '" alt="' . $blog->title . '">
             </div>
 
             <div class="blog-single-content">
-                '.$blog->content.'
+                ' . $blog->content . '
             </div>
 
         ';

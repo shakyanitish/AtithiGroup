@@ -1,7 +1,7 @@
 <?php
 /*
-* Top Social Links
-*/
+ * Top Social Links
+ */
 $socialRec = SocialNetworking::getSocialNetwork();
 $siteRegulars = Config::find_by_id(1);
 
@@ -9,31 +9,50 @@ $resocl = '';
 $disicon = '';
 
 if (!empty($socialRec)) {
+    $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $encoded_url = urlencode($current_url);
+
     foreach ($socialRec as $socialRow) {
         $icon = $socialRow->image;
-        
+        $title = strtolower(trim($socialRow->title));
+        $shareLink = $socialRow->linksrc;
+
+        // Override link for sharing if it's a known social network
+        if ($title == 'facebook') {
+            $shareLink = 'https://www.facebook.com/sharer/sharer.php?u=' . $encoded_url;
+        } else if ($title == 'twitter' || $title == 'x' || $title == 'x-twitter') {
+            $shareLink = 'https://twitter.com/intent/tweet?url=' . $encoded_url;
+        } else if ($title == 'linkedin') {
+            $shareLink = 'https://www.linkedin.com/feed/?shareActive=true&url=' . $encoded_url . '&shareUrl=' . $encoded_url . '&linkOrigin=LI_BADGE';
+        }
+
         // Skip if link is empty or just '#'
-        if (empty($socialRow->linksrc) || $socialRow->linksrc === '#') {
+        if (empty($shareLink) || $shareLink === '#') {
             continue;
         }
-        
+
+        // Determine horizontal padding
+        $padding = ($title == 'facebook') ? 'px-5' : 'px-4';
+
         // Determine icon display method
         if (!empty($icon)) {
             $disicon = '
+            <a href="' . $shareLink . '" target="_blank" rel="noreferrer noopener">
             <button
-                class="p-3 px-4 rounded-full bg-surface-light dark:bg-surface-dark hover:bg-primary hover:text-white transition-all">
+                class="p-3 ' . $padding . ' rounded-full bg-surface-light dark:bg-surface-dark hover:bg-primary hover:text-white transition-all">
                 <img src="' . IMAGE_PATH . 'social/' . $socialRow->image . '"/>
-            </button>';
+                </button>
+            </a>';
         } else {
             $disicon = '
-
-
+            <a href="' . $shareLink . '" target="_blank" rel="noreferrer noopener">
                         <button
-                            class="p-3 px-4 rounded-full bg-surface-light dark:bg-surface-dark hover:bg-primary hover:text-white transition-all">
+                            class="p-3 ' . $padding . ' rounded-full bg-surface-light dark:bg-surface-dark hover:bg-primary hover:text-white transition-all">
                             <i class="' . $socialRow->icon . '"></i>
-                        </button>';
+                </button>
+            </a>';
         }
-        
+
         $resocl .= $disicon;
     }
 }
@@ -42,14 +61,14 @@ $jVars['module:socilaLinkbtm'] = $resocl;
 
 
 /*
-* Home social link
-*/
+ * Home social link
+ */
 $icons = '';
 if (!empty($socialRec)) {
     foreach ($socialRec as $socialRow) {
         $icons .= '
             <a href="' . $socialRow->linksrc . '" target="_blank" rel="noreferrer noopener">
-                <img src="'.IMAGE_PATH.'social/' . $socialRow->image . '" height="20" alt="">
+                <img src="' . IMAGE_PATH . 'social/' . $socialRow->image . '" height="20" alt="">
             </a>
         ';
     }
@@ -74,7 +93,7 @@ $ota = '';
 if (!empty($otaRec)) {
     foreach ($otaRec as $otaRow) {
         $ota .= ' 
-        <li><a href="' . $otaRow->linksrc . '" target="_blank"><img src="'.IMAGE_PATH.'ota/' . $otaRow->image . '"></a></li>';
+        <li><a href="' . $otaRow->linksrc . '" target="_blank"><img src="' . IMAGE_PATH . 'ota/' . $otaRow->image . '"></a></li>';
     }
 }
 

@@ -19,7 +19,7 @@ switch($action)
         $record->title 		= $_REQUEST['title'];
         // $record->facebook 		= $_REQUEST['facebook'];
         // $record->instagram 		= $_REQUEST['instagram'];
-        $record->content	= $_REQUEST['content'];
+        // $record->content	= $_REQUEST['content'];
         // $record->social	= $_REQUEST['social'];
         $record->email	    = $_REQUEST['email'];
         $record->image	    = (!empty($_REQUEST['imageArrayname'])) ? $_REQUEST['imageArrayname'] : '';
@@ -57,7 +57,7 @@ switch($action)
         $record->title 		= $_REQUEST['title'];
         // $record->facebook 		= $_REQUEST['facebook'];
         // $record->instagram 		= $_REQUEST['instagram'];
-        $record->content	= $_REQUEST['content'];
+        // $record->content	= $_REQUEST['content'];
         // $record->social	= $_REQUEST['social'];
         $record->image	    = (!empty($_REQUEST['imageArrayname'])) ? $_REQUEST['imageArrayname'] : '';
         // $record->role	    = $_REQUEST['role'];

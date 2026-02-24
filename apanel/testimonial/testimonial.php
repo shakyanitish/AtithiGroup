@@ -113,7 +113,7 @@ $typeLabels = [7 => 'Atithi Suite', 8 => 'Atithi Resort'];
         </a>
     </div>
          <!-- Meta Tags-->
-         <div class="form-row">
+    <!-- <div class="form-row">
         <div class="form-checkbox-radio col-md-9">
             <a class="btn medium bg-blue" href="javascript:void(0);" onClick="toggleMetadata();">
                 <span class="glyph-icon icon-separator float-right">
@@ -173,7 +173,7 @@ $metadata = $metasql->fetch_object();
                     </button>
                     <input myaction='0' type="hidden" name="idValue" id="idValue" value="<?php echo !empty($metadata->id) ? $metadata->id : 0; ?>" />
         </form>
-    </div>
+    </div> -->
 
 <?php elseif (isset($_GET['mode']) && $_GET['mode'] == "addEdit"):
     if (isset($_GET['id']) && !empty($_GET['id'])):
