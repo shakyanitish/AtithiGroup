@@ -114,7 +114,7 @@ if (defined('HOME_PAGE')) {
                     <div class="aspect-[16/10] rounded-2xl overflow-hidden mb-6 relative shrink-0">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                             style="background-image: url(' . IMAGE_PATH . 'blog/' . $homebl->image . ')"></div>
-                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">Destination</div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-primary">' . $homebl->sub_title . '</div>
                     </div>
                     <div class="space-y-3 flex flex-col flex-1">
                         <div class="flex items-center gap-4 text-[10px] text-text-muted font-bold uppercase tracking-widest">
@@ -231,7 +231,7 @@ if (defined("BLOG_DETAIL_PAGE")) {
         // Recent Posts Sidebar
         $recent_posts = '';
         $recent_items = '';
-        $recents = Blog::get_latestblog_by(3);
+        $recents = Blog::get_latestblog_by(6);
 
         if (!empty($recents)) {
             foreach ($recents as $recent) {

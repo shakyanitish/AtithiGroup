@@ -25,6 +25,8 @@ $jVars['site:fevicon']		=  '<link rel="shortcut icon" href="'.IMAGE_PATH.'prefer
 							    <link rel="apple-touch-icon" href="'.IMAGE_PATH.'preference/'.$siteRegulars->icon_upload.'"> 
 							    <link rel="apple-touch-icon" sizes="72x72" href="'.IMAGE_PATH.'preference/'.$siteRegulars->icon_upload.'"> 
 							    <link rel="apple-touch-icon" sizes="114x114" href="'.IMAGE_PATH.'preference/'.$siteRegulars->icon_upload.'">';
+
+$jVars['site:logo2'] =IMAGE_PATH.'preference/'.$siteRegulars->icon_upload;
 $jVars['site:logo']			= '
 
 

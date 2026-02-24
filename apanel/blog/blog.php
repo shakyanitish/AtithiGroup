@@ -27,9 +27,9 @@ if (isset($_GET['page']) && $_GET['page'] == "blog" && isset($_GET['mode']) && $
                     <th style="display:none;"></th>
                     <th class="text-center"><input class="check-all" type="checkbox"/></th>
                     <th>Title</th>
-                    <th class="text-center">Images</th>
+                    <!-- <th class="text-center">Images</th> -->
                     <th class="text-center">Blog Date</th>
-                    <th class="text-center">Author</th>
+                    <!-- <th class="text-center">Author</th> -->
                     <th class="text-center"><?php echo $GLOBALS['basic']['action']; ?></th>
                 </tr>
                 </thead>
@@ -47,7 +47,7 @@ if (isset($_GET['page']) && $_GET['page'] == "blog" && isset($_GET['mode']) && $
                                    title="<?php echo $record->title; ?>"><?php echo $record->title; ?></a>
                             </div>
                         </td>
-                        <td class="text-center">
+                        <!-- <td class="text-center">
                             <a class="primary-bg medium btn loadingbar-demo" title=""
                                onClick="viewBlogImagelist(<?php echo $record->id; ?>);" href="javascript:void(0);">
                                 <span class="button-content">
@@ -56,9 +56,9 @@ if (isset($_GET['page']) && $_GET['page'] == "blog" && isset($_GET['mode']) && $
                                     <span class="text-transform-upr font-bold font-size-11">View Lists</span>
                                 </span>
                             </a>
-                        </td>
+                        </td> -->
                         <td><?php echo date('F d, Y', strtotime($record->blog_date)); ?></td>
-                        <td><?php echo $record->author; ?></td>
+                        <!-- <td><?php echo $record->author; ?></td> -->
                         <td class="text-center">
                             <?php
                             $statusImage = ($record->status == 1) ? "bg-green" : "bg-red";
@@ -227,21 +227,14 @@ endif;
                     </div>
                 </div>
 
-
-
-
-
-
-
-
                 <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
-                            Sub Title :
+                            Category :
                         </label>
                     </div>
                     <div class="form-input col-md-6">
-                        <input placeholder="Blog Sub Title" class="col-md-6 validate[required,length[0,200]]"
+                        <input placeholder="Category" class="col-md-6 validate[required,length[0,200]]"
                                type="text" name="sub_title" id="sub_title"
                                value="<?php echo !empty($blogInfo->sub_title) ? $blogInfo->sub_title : ""; ?>">
                     </div>
@@ -517,4 +510,5 @@ endif;
     </script>
 
 <?php endif;
-include("blog_images.php"); ?>
+// include("blog_images.php"); 
+?>

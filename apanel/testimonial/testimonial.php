@@ -91,6 +91,7 @@ $typeLabels = [7 => 'Atithi Suite', 8 => 'Atithi Resort'];
                                title="Remove" onclick="recordDelete(<?php echo $record->id; ?>);">
                                 <i class="glyph-icon icon-remove"></i>
                             </a>
+                            <input name="sortId" type="hidden" value="<?php echo $record->id; ?>">
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -56,6 +56,7 @@ if (!empty($programsRec)) {
         if ($program->slug == 'atithi-suite') {
             $ext_link = 'https://atithigroupnepal.com/atithisuite/';
             $booking_link = 'https://www.swiftbook.io/inst/#/home?propertyId=422NTaNhXon1R6gPJd8kXiLzG7UxNjE=&checkIn=2026-02-13&checkOut=2026-02-14&clientWidth=1513&JDRN=Y&RoomID=213068,213069,213072,213071&noofrooms=1&adult0=2&child0=0&gsId=422NTaNhXon1R6gPJd8kXiLzG7UxNjE=';
+            $text = 'Impressions';
             $location_text = '
 
             <div class="mt-8 text-center">
@@ -72,6 +73,7 @@ if (!empty($programsRec)) {
         } else if ($program->slug == 'atithi-resort') {
             $ext_link = 'https://atithigroupnepal.com/atithiresort/';
             $booking_link = 'https://atithigroupnepal.com/atithiresort//booking?date=2026-02-12&nights=1&adults=2&children-age=&access-code=';
+            $text = 'The Escape';
             $location_text = '
 
             <div class="mt-8 text-center text-text-muted text-sm flex items-center justify-center gap-2">
@@ -195,7 +197,7 @@ if (!empty($programsRec)) {
                         class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl flex-1 flex flex-col justify-between shadow-sm">
                         <div class="w-full overflow-hidden">
                             <div class="flex justify-between items-center mb-6">
-                                <h4 class="font-serif text-2xl text-text-main dark:text-white">Impressions</h4>
+                                <h4 class="font-serif text-2xl text-text-main dark:text-white">' . $text . '</h4>
                                 <a href="' . $ext_link . 'gallery-list" target="_blank"
                                     class="text-primary text-xs font-bold uppercase tracking-widest border-b border-primary/30 hover:border-primary transition-all">View
                                     All</a>

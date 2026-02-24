@@ -34,7 +34,7 @@ class Blog extends DatabaseObject
     {
         global $db;
         $cond = !empty($limit) ? 'LIMIT ' . $limit : '';
-        $sql = "SELECT id, slug, title, author, short_brief, brief, content, read_time, image, blog_date, source, viewcount, linksrc, linktype FROM " . self::$table_name . " WHERE status='1' ORDER BY blog_date DESC $cond";
+        $sql = "SELECT id, slug, title, sub_title, author, short_brief, brief, content, read_time, image, blog_date, source, viewcount, linksrc, linktype FROM " . self::$table_name . " WHERE status='1' ORDER BY blog_date DESC $cond";
 
         $result = self::find_by_sql($sql);
         return $result;
@@ -43,7 +43,7 @@ class Blog extends DatabaseObject
     public static function get_blogarchives_by($month = '', $year = '')
     {
         global $db;
-        $sql = "SELECT id, slug, title, author, brief, image, blog_date, source, viewcount FROM " . self::$table_name . " WHERE status='1' AND EXTRACT(MONTH FROM `blog_date`)='$month' AND EXTRACT(YEAR FROM `blog_date`)='$year'  ORDER BY blog_date DESC";
+        $sql = "SELECT id, slug, title, sub_title, author, brief, image, blog_date, source, viewcount FROM " . self::$table_name . " WHERE status='1' AND EXTRACT(MONTH FROM `blog_date`)='$month' AND EXTRACT(YEAR FROM `blog_date`)='$year'  ORDER BY blog_date DESC";
         $result = self::find_by_sql($sql);
         return $result;
     }
@@ -88,7 +88,7 @@ class Blog extends DatabaseObject
     {
         global $db;
         $cond = !empty($limit) ? 'LIMIT ' . $limit : '';
-        $sql = "SELECT slug, title, author, image, brief, blog_date FROM " . self::$table_name . " WHERE status='1' AND MONTH(blog_date) = MONTH(CURRENT_DATE) ORDER BY viewcount DESC $cond";
+        $sql = "SELECT slug, title, sub_title, author, image, brief, blog_date FROM " . self::$table_name . " WHERE status='1' AND MONTH(blog_date) = MONTH(CURRENT_DATE) ORDER BY viewcount DESC $cond";
         $result = self::find_by_sql($sql);
         return $result;
     }
