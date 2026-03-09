@@ -176,11 +176,11 @@ if (isset($_GET['page']) && $_GET['page'] == "package" && isset($_GET['mode']) &
                 <div class="form-row">
                     <div class="form-label col-md-2">
                         <label for="">
-                            Brief :
+                            Tagline :
                         </label>
                     </div>
                     <div class="form-input col-md-20">
-                        <input placeholder="Package Sub" class="col-md-6 validate[length[0,200]]" type="text"
+                        <input placeholder="Tagline" class="col-md-6 validate[length[0,200]]" type="text"
                             name="sub_title" id="sub_title"
                             value="<?php echo !empty($packageInfo->sub_title) ? $packageInfo->sub_title : ""; ?>">
                     </div>

@@ -1,0 +1,35 @@
+[
+    {
+        "id": "8",
+        "title": "Twitter",
+        "image": "",
+        "icon": "fab fa-twitter",
+        "type": "1",
+        "linksrc": "#",
+        "status": "1",
+        "sortorder": "2",
+        "registered": "2025-12-11 12:16:17"
+    },
+    {
+        "id": "7",
+        "title": "Facebook",
+        "image": "",
+        "icon": "fab fa-facebook-f",
+        "type": "1",
+        "linksrc": "#",
+        "status": "1",
+        "sortorder": "1",
+        "registered": "2025-12-11 12:14:23"
+    },
+    {
+        "id": "9",
+        "title": "LinkedIn",
+        "image": "",
+        "icon": "fab fa-linkedin-in",
+        "type": "1",
+        "linksrc": "#",
+        "status": "1",
+        "sortorder": "3",
+        "registered": "2026-01-28 12:12:04"
+    }
+]

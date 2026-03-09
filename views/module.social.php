@@ -17,13 +17,25 @@ if (!empty($socialRec)) {
         $title = strtolower(trim($socialRow->title));
         $shareLink = $socialRow->linksrc;
 
+        // Ensure blog data is available if on blog detail page (handles inclusion order issue)
+        global $Blogs;
+        if (defined('BLOG_DETAIL_PAGE') && empty($Blogs)) {
+            $slug = !empty($_REQUEST['slug']) ? $_REQUEST['slug'] : '';
+            if (!empty($slug)) {
+                $Blogs = Blog::find_by_slug($slug);
+            }
+        }
+
+        $blog_img_url = (defined('BLOG_DETAIL_PAGE') && !empty($Blogs->image)) ? urlencode(IMAGE_PATH . 'blog/' . $Blogs->image) : '';
+        $blog_title = (defined('BLOG_DETAIL_PAGE') && !empty($Blogs->title)) ? urlencode($Blogs->title) : '';
+
         // Override link for sharing if it's a known social network
         if ($title == 'facebook') {
             $shareLink = 'https://www.facebook.com/sharer/sharer.php?u=' . $encoded_url;
         } else if ($title == 'twitter' || $title == 'x' || $title == 'x-twitter') {
-            $shareLink = 'https://twitter.com/intent/tweet?url=' . $encoded_url;
+            $shareLink = 'https://twitter.com/intent/tweet?url=' . $encoded_url . ($blog_title ? '&text=' . $blog_title : '');
         } else if ($title == 'linkedin') {
-            $shareLink = 'https://www.linkedin.com/feed/?shareActive=true&url=' . $encoded_url . '&shareUrl=' . $encoded_url . '&linkOrigin=LI_BADGE';
+            $shareLink = 'https://www.linkedin.com/sharing/share-offsite/?url=' . $encoded_url;
         }
 
         // Skip if link is empty or just '#'

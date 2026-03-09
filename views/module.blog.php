@@ -95,7 +95,7 @@ $linkTarget = '';
 $homebloglist = '';
 $homeblogs = '';
 if (defined('HOME_PAGE')) {
-    $homeblog= Blog::get_latestblog_by(100);
+    $homeblog = Blog::get_latestblog_by(100);
     // $homeblogs = Blog:: get_latestblog_by(3);
     if (!empty($homeblog)) {
 
@@ -265,7 +265,7 @@ if (defined("BLOG_DETAIL_PAGE")) {
         }
 
         $jVars['module:blog-detail'] = $blog_detail;
-        
+
         // Granular Variables for Template
         $jVars['module:blog-title'] = $Blogs->title;
         $jVars['module:blog-date'] = date('M d, Y', strtotime($Blogs->blog_date));

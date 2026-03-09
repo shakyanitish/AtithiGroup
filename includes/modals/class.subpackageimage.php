@@ -24,7 +24,7 @@ class SubPackageImage extends DatabaseObject {
 	public static function getImagelist_by_package($packageid='',$postnumbers='', $offset=''){
 		global $db;
 		$limt  = (!empty($postnumbers) and !empty($offset))?"LIMIT ".$postnumbers." OFFSET ".$offset:'';
-		$sql = "SELECT * FROM ".self::$table_name." WHERE status=1 AND packageid=$packageid ORDER BY sortorder DESC $limt";
+		$sql = "SELECT * FROM ".self::$table_name." WHERE status=1 AND packageid=$packageid ORDER BY sortorder ASC $limt";
 		return self::find_by_sql($sql);
 	}
 

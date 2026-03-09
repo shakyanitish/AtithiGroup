@@ -49,7 +49,7 @@ if (!empty($programsRec)) {
         $content = $program->content ?? '';
 
         // Property specific links (Hardcoded for now as they are external sites)
-        $ext_link = 'https://atithigroup.com';
+        $ext_link = 'https://www.atithigroupnepal.com/';
         $booking_link = '#';
         $location_text = '';
         
@@ -63,8 +63,6 @@ if (!empty($programsRec)) {
                 <p class="text-text-muted text-sm italic font-light">"A perfect blend of luxury and
                     convenience."</p>
             </div>
-            
-            
             
             
             

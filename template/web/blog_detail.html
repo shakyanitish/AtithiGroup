@@ -108,8 +108,7 @@
                 <div
                     class="mt-16 pt-10 border-t border-black/10 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
                     <div class="flex items-center gap-4">
-                        <img id="blog-author-img" src='<jcms:site:logo2/>' alt="Author"
-                            class="size-12 rounded-full">
+                        <img id="blog-author-img" src='<jcms:site:logo2/>' alt="Author" class="size-12 rounded-full">
                         <div>
                             <span class="block text-sm font-bold uppercase tracking-widest text-primary">Written
                                 By</span>
@@ -131,10 +130,27 @@
                 <!-- Newsletter -->
                 <div class="bg-primary text-white p-10 rounded-2xl shadow-xl">
                     <h3 class="text-2xl font-serif font-bold mb-4">Stay Inspired</h3>
-                    <p class="text-white/80 font-light mb-8 italic">Join our community for exclusive travel tips and member-only stories.</p>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Email Address" class="w-full bg-white/10 border border-white/20 rounded-full py-3 px-6 text-white placeholder:text-white/60 focus:bg-white/20 focus:outline-none">
-                        <button class="w-full bg-white text-primary font-bold uppercase tracking-widest text-xs py-4 rounded-full hover:bg-background-dark hover:text-white transition-all">Subscribe</button>
+                    <p class="text-white/80 font-light mb-8 italic">Join our community for exclusive travel tips and
+                        member-only stories.</p>
+
+                    <form
+                        action="https://atithigroupnepal.us11.list-manage.com/subscribe/post?u=721e86d4fb7a038c8d5824df0&id=4ddc9409d4&f_id=008711e1f0"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                        class="validate space-y-4" target="_blank">
+
+                        <input type="email" name="EMAIL" placeholder="Email Address"
+                            class="w-full bg-white/10 border border-white/20 rounded-full py-3 px-6 text-white placeholder:text-white/60 focus:bg-white/20 focus:outline-none"
+                            id="mce-EMAIL" required value="">
+
+                        <!-- ✅ Required honeypot field - do NOT remove -->
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_721e86d4fb7a038c8d5824df0_4ddc9409d4" tabindex="-1" value="">
+                        </div>
+
+                        <button type="submit" name="subscribe" id="mc-embedded-subscribe"
+                            class="w-full bg-white text-primary font-bold uppercase tracking-widest text-xs py-4 rounded-full hover:bg-background-dark hover:text-white transition-all">
+                            Subscribe
+                        </button>
                     </form>
                 </div>
             </aside>
